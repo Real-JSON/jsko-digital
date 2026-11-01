@@ -5,6 +5,8 @@ import Approach from "./components/sections/Approach";
 import Footer from "./components/layout/Footer";
 import Pricing from "./components/sections/Pricing";
 import Projects from "./components/sections/Projects";
+import SectionHeading from "./components/sections/SectionHeading";
+import Faq from "./components/sections/Faq";
 
 const services = [
     {
@@ -26,43 +28,6 @@ const services = [
         tags: ["Brand identity", "Social graphics", "Visual assets"],
     },
 ];
-
-const faqs = [
-    [
-        "How long does a website take?",
-        "A typical small business website can take around 2–4 weeks after the content and project scope are confirmed. Larger projects may take longer.",
-    ],
-    [
-        "Can you work with an existing brand?",
-        "Yes. We can work with your current logo, colours and brand assets, or help refine the visual direction where needed.",
-    ],
-    [
-        "Will my website work on mobile?",
-        "Yes. Responsive behaviour is part of the design and development process, not an optional extra.",
-    ],
-    [
-        "What do you need to get started?",
-        "A short overview of your business, your goals, any existing brand assets, and examples of websites or styles you like are a great starting point.",
-    ],
-];
-
-const SectionHeading = ({ eyebrow, title, copy }) => {
-    return (
-        <div className="max-w-190">
-            <span className="inline-flex items-center gap-2.5 text-[#7de7c6] text-[10px] font-bold tracking-[0.2em] uppercase before:content-[''] before:w-5 before:h-px before:bg-(--green)">
-                {eyebrow}
-            </span>
-            <h2 className="text-[clamp(38px,5vw,64px)] leading-[1.08] tracking-[-0.065em] font-[520] my-5.5 max-[640px]:text-[42px]">
-                {title}
-            </h2>
-            {copy && (
-                <p className="max-w-135 text-(--muted) text-[15px] leading-[1.9] mt-3.75">
-                    {copy}
-                </p>
-            )}
-        </div>
-    );
-};
 
 const Services = () => {
     return (
@@ -120,36 +85,6 @@ const Services = () => {
     );
 };
 
-function FAQ() {
-    return (
-        <section className="section-wrap faq-section" id="faq">
-            <SectionHeading
-                eyebrow="GOOD TO KNOW"
-                title={
-                    <>
-                        A few things you
-                        <br />
-                        <span className="gradient-text">
-                            might be wondering.
-                        </span>
-                    </>
-                }
-            />
-            <div className="faq-list">
-                {faqs.map(([q, a], i) => (
-                    <details key={q} className="faq-item">
-                        <summary>
-                            <span className="faq-number">0{i + 1}</span>
-                            {q}
-                            <span className="faq-plus">+</span>
-                        </summary>
-                        <p>{a}</p>
-                    </details>
-                ))}
-            </div>
-        </section>
-    );
-}
 function ContactCTA() {
     return (
         <section className="contact-cta" id="contact">
@@ -188,7 +123,7 @@ export default function App() {
                 <Projects />
                 <Approach />
                 <Pricing />
-                <FAQ />
+                <Faq />
                 <ContactCTA />
             </main>
             <Footer />
