@@ -1,8 +1,33 @@
+import { useEffect, useState } from "react";
 import Aurora from "../effects/Aurora";
+
 export default function Hero() {
+    const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowScrollIndicator(true);
+        }, 3000);
+
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setShowScrollIndicator(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return (
-        <section className="hero" id="home">
-            <div className="hero-aurora">
+        <section
+            id="home"
+            className="relative min-h-212.5 pt-43.75 px-[5%] pb-25 flex items-center isolate overflow-hidden bg-[#050706] bg-[radial-gradient(ellipse_at_70%_0%,rgba(0,214,154,0.12),transparent_43%)] max-[900px]:min-h-0 max-[900px]:pt-38.75 max-[640px]:pt-33.75 max-[640px]:px-[6%] max-[640px]:pb-22.5"
+        >
+            <div className="absolute -z-20 inset-x-0 top-0 h-162.5 opacity-78 pointer-events-none">
                 <Aurora
                     colorStops={["#00d69a", "#087e68", "#7000cc"]}
                     amplitude={0.72}
@@ -10,86 +35,122 @@ export default function Hero() {
                     speed={0.8}
                 />
             </div>
-            <div className="hero-grid" />
-            <div className="hero-inner">
-                <div className="hero-copy">
-                    <div className="availability">
-                        <i /> Independent digital studio <span>·</span> Sri
-                        Lanka & beyond
+
+            <div className="absolute -z-10 inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-size-[70px_70px] mask-[linear-gradient(to_bottom,black,transparent_85%)] pointer-events-none" />
+
+            <div className="w-full max-w-310 mx-auto grid grid-cols-[1.08fr_0.92fr] gap-15 items-center max-[900px]:grid-cols-1 max-[900px]:gap-13.75">
+                <div className="animate-[rise_0.8s_both]">
+                    <div className="inline-flex items-center gap-2.5 py-2.5 px-3.5 border border-[#00d69a]/25 rounded-[50px] bg-[#00d69a]/6 text-[#b9d9cd] text-[10px] tracking-[0.06em]">
+                        <i className="w-1.75 h-1.75 rounded-full bg-(--green) shadow-[0_0_14px_var(--green)]" />{" "}
+                        Beyond Pixels. Beyond Possibilities.
                     </div>
-                    <h1>
+
+                    <h1 className="text-[clamp(48px,6.3vw,86px)] leading-[1.04] tracking-[-0.075em] font-[540] mt-7.5 mb-5.5 max-[640px]:text-[clamp(43px,12vw,62px)]">
                         Make your brand
                         <br />
                         impossible to{" "}
-                        <span className="gradient-text">ignore.</span>
+                        <span className="bg-[linear-gradient(105deg,#00e0a2_0%,#66e5c0_48%,#a47aff_100%)] bg-clip-text text-transparent">
+                            ignore.
+                        </span>
                     </h1>
-                    <p>
+
+                    <p className="max-w-135 text-(--muted) text-[15px] leading-[1.9] max-[640px]:text-[13px]">
                         We design and build thoughtful digital experiences that
                         help ambitious businesses show up, stand out and move
                         forward.
                     </p>
-                    <div className="hero-actions">
-                        <a className="button-primary" href="#contact">
-                            Start a project <span>↗</span>
+
+                    <div className="flex items-center gap-6.75 mt-8.5 max-[640px]:items-start max-[640px]:flex-col max-[640px]:gap-5">
+                        <a
+                            className="inline-flex items-center justify-center gap-6 py-3.75 px-5.25 rounded-[50px] text-[12px] font-bold bg-(--green) text-[#04120d] shadow-[0_0_35px_rgba(0,214,154,0.13)] no-underline transition-[transform,box-shadow,background] duration-250 hover:-translate-y-0.75 hover:shadow-[0_10px_35px_rgba(0,214,154,0.25)] hover:bg-[#48edbd]"
+                            href="#contact"
+                        >
+                            Start a project{" "}
+                            <span className="text-[17px]">↗</span>
                         </a>
-                        <a className="text-link" href="#work">
-                            Explore selected work <span>↓</span>
+                        <a
+                            className="text-[12px] text-[#c6d0ca] no-underline"
+                            href="#work"
+                        >
+                            Explore selected work{" "}
+                            <span className="ml-2.5 text-(--green)">↓</span>
                         </a>
-                    </div>
-                    <div className="hero-proof">
-                        <span>DESIGN WITH INTENTION</span>
-                        <b /> <span>DEVELOPMENT THAT DELIVERS</span>
                     </div>
                 </div>
-                <div className="hero-art">
-                    <div className="art-glow" />
-                    <div className="browser-card">
-                        <div className="browser-top">
-                            <div>
-                                <i />
-                                <i />
-                                <i />
+
+                <div className="relative max-w-130 w-full mx-auto animate-[rise_0.9s_0.15s_both] max-[900px]:max-w-117.5 max-[640px]:w-[92%]">
+                    <div className="absolute inset-y-[10%] inset-x-0 bg-[linear-gradient(120deg,rgba(0,214,154,0.22),rgba(112,0,204,0.2))] blur-[75px] rounded-full" />
+
+                    <div className="relative p-2.5 border border-white/16 rounded-[20px] bg-[#0e1310]/86 shadow-[0_35px_100px_#0009] rotate-2 transition-transform duration-500 hover:rotate-0 hover:-translate-y-1.5">
+                        <div className="h-9.5 flex items-center justify-between px-2.5 text-[#65736b] text-[9px]">
+                            <div className="flex gap-1.25">
+                                <i className="w-1.75 h-1.75 rounded-full bg-[#e87979]" />
+                                <i className="w-1.75 h-1.75 rounded-full bg-[#e5c36c]" />
+                                <i className="w-1.75 h-1.75 rounded-full bg-(--green)" />
                             </div>
                             <span>your-next-move.com</span>
                             <span>↗</span>
                         </div>
-                        <div className="browser-content">
-                            <span className="art-kicker">
+
+                        <div className="min-h-90 pt-8.75 px-7.5 pb-6 rounded-xl bg-[radial-gradient(ellipse_at_85%_15%,rgba(0,214,154,0.2),transparent_50%),linear-gradient(140deg,#19221d,#080b09_70%)] flex flex-col justify-between overflow-hidden max-[640px]:min-h-75 max-[640px]:py-6.25 max-[640px]:px-5">
+                            <span className="text-[8px] tracking-[0.2em] text-[#82e8c6]">
                                 A DIGITAL FIRST IMPRESSION
                             </span>
-                            <div className="art-title">
+
+                            <div className="text-[clamp(34px,4vw,54px)] leading-[1.08] tracking-[-0.06em] mt-6.25">
                                 Build a brand
                                 <br />
-                                people <em>remember.</em>
+                                people{" "}
+                                <em className="not-italic text-(--green)">
+                                    remember.
+                                </em>
                             </div>
-                            <div className="art-line" />
-                            <div className="art-bottom">
-                                <span>
-                                    Strategy
-                                    <br />
-                                    Design
-                                    <br />
-                                    Development
+
+                            <div className="h-px bg-[linear-gradient(90deg,var(--green),transparent)] my-7" />
+
+                            <div className="flex items-center justify-between text-[#a4b1a9] text-[10px] leading-loose">
+                                <span>Strategy</span>
+                                <span className="text-[23px] text-(--green)">
+                                    ✳
                                 </span>
-                                <div className="art-circle">
-                                    JS
-                                    <br />
-                                    KO
-                                </div>
+                                <span>Design</span>
+                                <span className="text-[23px] text-(--green)">
+                                    ✳
+                                </span>
+                                <span>Development</span>
                             </div>
                         </div>
                     </div>
-                    <div className="floating-note">
-                        <span className="note-icon">✳</span>
+
+                    <div className="absolute -bottom-6 -left-7.5 flex items-center gap-3 py-3.5 px-4.5 border border-(--line) rounded-[13px] bg-[#111713] shadow-[0_15px_45px_#0008] max-[640px]:-left-3 max-[640px]:-bottom-7.5">
+                        <span className="text-[23px] text-(--green)">✳</span>
                         <div>
-                            <b>Made with purpose</b>
-                            <small>From idea to experience</small>
+                            <b className="block text-[11px]">
+                                From Imagination
+                            </b>
+                            <small className="block mt-1 text-(--muted) text-[9px]">
+                                to Interaction.
+                            </small>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="#focus" className="scroll-cue">
-                <span /> Scroll to explore
+
+            <a
+                href="#focus"
+                className={`absolute bottom-[22dvh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#68736c] text-[10px] no-underline group transition-all duration-700 ${
+                    showScrollIndicator
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-3 pointer-events-none"
+                }`}
+            >
+                <span className="animate-scroll-arrow text-(--green) text-lg">
+                    ↓
+                </span>
+
+                <span className="transition-colors duration-300 group-hover:text-(--green)">
+                    Scroll to explore
+                </span>
             </a>
         </section>
     );
