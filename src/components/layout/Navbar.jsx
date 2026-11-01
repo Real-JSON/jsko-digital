@@ -35,7 +35,7 @@ export default function Navbar() {
                     aria-label="JSKO home"
                 >
                     <img
-                        className="w-16 h-16 object-contain"
+                        className="w-12 h-12 object-contain"
                         src="/site-logo-new.png"
                         alt="JSKO"
                     />
