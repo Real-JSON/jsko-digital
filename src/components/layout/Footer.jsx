@@ -1,40 +1,54 @@
 const socials = [
     ["Facebook", "https://www.facebook.com/jsko.digital/"],
     ["Portfolio", "https://jsko-labs-portfolio.vercel.app/"],
-    ["Email", "mailto:hello@jsko.digital"],
+    ["Email", "mailto:jsko.digital@gmail.com"],
 ];
+
 export default function Footer() {
     return (
-        <footer className="site-footer">
-            <div className="footer-main">
-                <a className="brand-mark footer-brand" href="#home">
-                    <img src="/site-logo-new.png" alt="" />
-                    <span>
-                        JSKO<span className="brand-dot">.</span>
-                    </span>
+        <footer className="pt-11.25 px-[5%] pb-6.25 border-t border-(--line)">
+            <div className="max-w-310 mx-auto flex items-center justify-between gap-6.25 max-[640px]:items-start max-[640px]:flex-wrap">
+                <a
+                    className="flex items-center gap-2.5 text-[21px] font-[750] tracking-[-0.07em] text-inherit no-underline"
+                    href="#home"
+                >
+                    <img
+                        className="w-16 h-16 object-contain"
+                        src="/site-logo-new.png"
+                        alt="JSKO"
+                    />
                 </a>
-                <p>
+                <p className="m-0 text-(--muted) text-[12px] leading-[1.8] max-[640px]:order-3 max-[640px]:w-full">
                     Thoughtful digital experiences
                     <br />
                     for businesses ready to move forward.
                 </p>
-                <a className="footer-top" href="#home">
-                    Back to top ↑
+                <a
+                    className="text-[11px] text-(--green) no-underline"
+                    href="#home"
+                >
+                    Back to Top ↑
                 </a>
             </div>
-            <div className="footer-bottom">
+            <div className="max-w-310 mx-auto flex items-center justify-between gap-6.25 pt-8.75 mt-8.75 border-t border-(--line) text-[#657169] text-[12px] max-[640px]:items-start max-[640px]:flex-col max-[640px]:gap-3.75">
                 <span>
                     © {new Date().getFullYear()} JSKO Digital. All rights
                     reserved.
                 </span>
-                <div>
+                <div className="flex gap-5.5 max-[640px]:flex-wrap max-[640px]:gap-4">
                     {socials.map(([n, u]) => (
-                        <a key={n} href={u} target="_blank" rel="noreferrer">
+                        <a
+                            key={n}
+                            href={u}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-[12px] text-[#aab2ad] no-underline transition-colors duration-200 hover:text-(--green)"
+                        >
                             {n} ↗
                         </a>
                     ))}
                 </div>
-                <span>Designed with intention.</span>
+                <span>Made with <span className="text-(--green)">♥</span></span>
             </div>
         </footer>
     );
