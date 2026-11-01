@@ -2,9 +2,9 @@ import Navbar from "./components/layout/Navbar";
 import Hero from "./components/sections/Hero";
 import Brand from "./components/sections/Brand";
 import Approach from "./components/sections/Approach";
-import BentoGrid from "./components/ui/BentoGrid";
 import Footer from "./components/layout/Footer";
 import Pricing from "./components/sections/Pricing";
+import Projects from "./components/sections/Projects";
 
 const services = [
     {
@@ -185,7 +185,7 @@ export default function App() {
                 <Hero />
                 <Brand />
                 <Services />
-                <BentoGrid />
+                <Projects />
                 <Approach />
                 <Pricing />
                 <FAQ />
