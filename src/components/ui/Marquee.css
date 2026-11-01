@@ -32,12 +32,12 @@
 
 .marquee-container::before {
     left: 0;
-    background: linear-gradient(to right, black 0%, rgba(24, 24, 24, 0) 100%);
+    background: linear-gradient(to right, #050706 0%, rgba(24, 24, 24, 0) 100%);
 }
 
 .marquee-container::after {
     right: 0;
-    background: linear-gradient(to left, black 0%, rgba(24, 24, 24, 0) 100%);
+    background: linear-gradient(to left, #050706 0%, rgba(24, 24, 24, 0) 100%);
 }
 
 .marquee-item {
