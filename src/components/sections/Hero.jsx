@@ -1,4 +1,4 @@
-import Aurora from "../../component/Aurora";
+import Aurora from "../effects/Aurora";
 export default function Hero() {
     return (
         <section className="hero" id="home">
