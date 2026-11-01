@@ -7,6 +7,7 @@ import Pricing from "./components/sections/Pricing";
 import Projects from "./components/sections/Projects";
 import SectionHeading from "./components/sections/SectionHeading";
 import Faq from "./components/sections/Faq";
+import ContactCTA from "./components/sections/ContactCTA";
 
 const services = [
     {
@@ -85,33 +86,6 @@ const Services = () => {
     );
 };
 
-function ContactCTA() {
-    return (
-        <section className="contact-cta" id="contact">
-            <div className="cta-orb" />
-            <span className="eyebrow">HAVE A PROJECT IN MIND?</span>
-            <h2>
-                Let’s make something
-                <br />
-                <span className="gradient-text">worth remembering.</span>
-            </h2>
-            <p>
-                Tell us what you’re working on. We’ll help you figure out a
-                thoughtful next step.
-            </p>
-            <a
-                className="button-primary cta-button"
-                href="mailto:hello@jsko.digital"
-            >
-                Start a conversation <span>↗</span>
-            </a>
-            <small>
-                Prefer email?{" "}
-                <a href="mailto:hello@jsko.digital">hello@jsko.digital</a>
-            </small>
-        </section>
-    );
-}
 export default function App() {
     return (
         <>
