@@ -1,5 +1,3 @@
-import React from "react";
-
 const SectionHeading = ({ eyebrow, title, copy }) => {
     return (
         <div className="max-w-190">
