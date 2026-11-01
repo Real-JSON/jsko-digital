@@ -1,2 +1,41 @@
-const socials=[['Facebook','https://www.facebook.com/jsko.digital/'],['Portfolio','https://jsko-labs-portfolio.vercel.app/'],['Email','mailto:hello@jsko.digital']];
-export default function Footer(){return <footer className="site-footer"><div className="footer-main"><a className="brand-mark footer-brand" href="#home"><img src="/site-logo-new.png" alt=""/><span>JSKO<span className="brand-dot">.</span></span></a><p>Thoughtful digital experiences<br/>for businesses ready to move forward.</p><a className="footer-top" href="#home">Back to top ↑</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} JSKO Digital. All rights reserved.</span><div>{socials.map(([n,u])=><a key={n} href={u} target="_blank" rel="noreferrer">{n} ↗</a>)}</div><span>Designed with intention.</span></div></footer>}
+const socials = [
+    ["Facebook", "https://www.facebook.com/jsko.digital/"],
+    ["Portfolio", "https://jsko-labs-portfolio.vercel.app/"],
+    ["Email", "mailto:hello@jsko.digital"],
+];
+export default function Footer() {
+    return (
+        <footer className="site-footer">
+            <div className="footer-main">
+                <a className="brand-mark footer-brand" href="#home">
+                    <img src="/site-logo-new.png" alt="" />
+                    <span>
+                        JSKO<span className="brand-dot">.</span>
+                    </span>
+                </a>
+                <p>
+                    Thoughtful digital experiences
+                    <br />
+                    for businesses ready to move forward.
+                </p>
+                <a className="footer-top" href="#home">
+                    Back to top ↑
+                </a>
+            </div>
+            <div className="footer-bottom">
+                <span>
+                    © {new Date().getFullYear()} JSKO Digital. All rights
+                    reserved.
+                </span>
+                <div>
+                    {socials.map(([n, u]) => (
+                        <a key={n} href={u} target="_blank" rel="noreferrer">
+                            {n} ↗
+                        </a>
+                    ))}
+                </div>
+                <span>Designed with intention.</span>
+            </div>
+        </footer>
+    );
+}
