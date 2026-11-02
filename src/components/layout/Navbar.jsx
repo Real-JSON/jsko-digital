@@ -1,3 +1,5 @@
+import { useIconHover } from "@animateicons/react";
+import { ArrowUpRightIcon } from "@animateicons/react/lucide";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -10,6 +12,8 @@ const links = [
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
+    const { ref, triggerProps } = useIconHover();
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
@@ -54,10 +58,20 @@ export default function Navbar() {
                 </div>
 
                 <a
-                    className="max-[640px]:hidden border border-[#00d69a]/55 rounded-[50px] py-3 px-4.75 text-[12px] text-[#8af0ce] no-underline transition-all duration-250 hover:bg-(--green) hover:text-[#04110c]"
+                    {...triggerProps}
+                    className="group max-[640px]:hidden border border-[#00d69a]/55 rounded-[50px] py-3 px-4.75 text-[12px] text-[#8af0ce] no-underline transition-all duration-250 hover:bg-(--green) hover:text-[#04110c]"
                     href="#contact"
                 >
-                    Let’s talk <span className="ml-3.5">↗</span>
+                    Let’s talk
+                    <span className="ml-3.5 inline-flex">
+                        <ArrowUpRightIcon
+                            ref={ref}
+                            size={14}
+                            duration={1}
+                            color="currentColor"
+                            className="relative top-1"
+                        />
+                    </span>
                 </a>
 
                 <button
