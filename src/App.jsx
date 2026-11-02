@@ -1,6 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/sections/Hero";
-import Brand from "./components/sections/Brand";
+import Focus from "./components/sections/Focus";
 import Approach from "./components/sections/Approach";
 import Footer from "./components/layout/Footer";
 import Pricing from "./components/sections/Pricing";
@@ -15,7 +15,7 @@ export default function App() {
             <Navbar />
             <main>
                 <Hero />
-                <Brand />
+                <Focus />
                 <Services />
                 <Projects />
                 <Approach />

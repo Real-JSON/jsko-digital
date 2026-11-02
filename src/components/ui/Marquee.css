@@ -3,7 +3,7 @@
     width: 100%;
     overflow: hidden;
     padding: clamp(1rem, 2vw, 2.5rem) 0;
-    margin-top: 3rem;
+    margin-top: 4rem;
     white-space: nowrap;
     display: flex;
     user-select: none;
