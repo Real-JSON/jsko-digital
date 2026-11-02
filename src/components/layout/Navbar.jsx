@@ -46,7 +46,7 @@ export default function Navbar() {
                         <a
                             key={href}
                             href={href}
-                            className="text-[14px] text-[#aab2ad] no-underline transition-colors duration-200 hover:text-(--green)"
+                            className="text-[14px] text-[#ced4d0] no-underline transition-colors duration-200 hover:text-(--green)"
                         >
                             {label}
                         </a>
