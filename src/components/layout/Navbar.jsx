@@ -22,94 +22,102 @@ export default function Navbar() {
     }, []);
 
     return (
-        <header
-            className={`fixed inset-x-0 top-0 z-100 px-[5%] border-b transition-[background,border-color,backdrop-filter] duration-300 ${
-                scrolled
-                    ? "bg-[#050706]/82 border-(--line) backdrop-blur-[18px]"
-                    : "border-transparent"
-            }`}
-        >
-            <nav
-                className="max-w-310 h-20.5 max-[640px]:h-17.5 mx-auto flex items-center justify-between"
-                aria-label="Main navigation"
+        <>
+            <header
+                className={`fixed inset-x-0 top-0 z-100 px-[5%] border-b transition-[background,border-color,backdrop-filter] duration-300 ${
+                    scrolled
+                        ? "bg-[#050706]/82 border-(--line) backdrop-blur-[18px]"
+                        : "border-transparent"
+                }`}
             >
-                <a
-                    className="flex items-center gap-2.5 text-[21px] font-[750] tracking-[-0.07em] text-inherit no-underline"
-                    href="#home"
-                    aria-label="JSKO home"
+                <nav
+                    className="max-w-310 h-20.5 max-[640px]:h-17.5 mx-auto flex items-center justify-between"
+                    aria-label="Main navigation"
                 >
-                    <img
-                        className="w-12 h-12 object-contain"
-                        src="/site-logo-new.png"
-                        alt="JSKO"
-                    />
-                </a>
-
-                <div className="flex gap-9 max-[640px]:hidden">
-                    {links.map(([label, href]) => (
-                        <a
-                            key={href}
-                            href={href}
-                            className="text-[14px] text-[#ced4d0] no-underline transition-colors duration-200 hover:text-(--green)"
-                        >
-                            {label}
-                        </a>
-                    ))}
-                </div>
-
-                <a
-                    {...triggerProps}
-                    className="group max-[640px]:hidden border border-[#00d69a]/55 rounded-[50px] py-3 px-4.75 text-[12px] text-[#8af0ce] no-underline transition-all duration-250 hover:bg-(--green) hover:text-[#04110c]"
-                    href="#contact"
-                >
-                    Let’s talk
-                    <span className="ml-3.5 inline-flex">
-                        <ArrowUpRightIcon
-                            ref={ref}
-                            size={14}
-                            duration={1}
-                            color="currentColor"
-                            className="relative top-1"
-                        />
-                    </span>
-                </a>
-
-                <button
-                    className="hidden max-[640px]:flex flex-col items-center justify-center gap-1.25 bg-transparent border border-(--line) rounded-full w-10.5 h-10.5 text-white cursor-pointer"
-                    aria-label={open ? "Close menu" : "Open menu"}
-                    aria-expanded={open}
-                    onClick={() => setOpen(!open)}
-                >
-                    <span className="w-4 h-px bg-white" />
-                    <span className="w-4 h-px bg-white" />
-                </button>
-            </nav>
-
-            {open && (
-                <div className="hidden max-[640px]:flex flex-col gap-0 pt-2.5 px-4 pb-4 border border-(--line) rounded-[15px] bg-[#090d0a]/97 backdrop-blur-[20px]">
-                    {links.map(([label, href]) => (
-                        <a
-                            key={href}
-                            href={href}
-                            onClick={() => setOpen(false)}
-                            className="flex justify-between py-3.5 px-1.25 border-b border-(--line) text-[13px] text-[#dce5df] no-underline"
-                        >
-                            {label}
-                            <span>
-                                <ArrowUpRightIcon
-                                    size={14}
-                                    duration={1}
-                                    color="currentColor"
-                                />
-                            </span>
-                        </a>
-                    ))}
                     <a
-                        href="#contact"
-                        onClick={() => setOpen(false)}
-                        className="flex justify-between py-3.5 px-1.25 border-0 text-[13px] text-(--green) no-underline"
+                        className="flex items-center gap-2.5 text-[21px] font-[750] tracking-[-0.07em] text-inherit no-underline"
+                        href="#home"
+                        aria-label="JSKO home"
                     >
-                        Start a project{" "}
+                        <img
+                            className="w-12 h-12 object-contain"
+                            src="/site-logo-new.png"
+                            alt="JSKO"
+                        />
+                    </a>
+
+                    <div className="flex gap-9 max-[640px]:hidden">
+                        {links.map(([label, href]) => (
+                            <a
+                                key={href}
+                                href={href}
+                                className="text-[14px] text-[#ced4d0] no-underline transition-colors duration-200 hover:text-(--green)"
+                            >
+                                {label}
+                            </a>
+                        ))}
+                    </div>
+
+                    <a
+                        {...triggerProps}
+                        className="group max-[640px]:hidden border border-[#00d69a]/55 rounded-[50px] py-3 px-4.75 text-[12px] text-[#8af0ce] no-underline transition-all duration-250 hover:bg-(--green) hover:text-[#04110c]"
+                        href="#contact"
+                    >
+                        Let’s talk
+                        <span className="ml-3.5 inline-flex">
+                            <ArrowUpRightIcon
+                                ref={ref}
+                                size={14}
+                                duration={1}
+                                color="currentColor"
+                                className="relative top-1"
+                            />
+                        </span>
+                    </a>
+
+                    <button
+                        className="hidden max-[640px]:flex flex-col items-center justify-center gap-1.25 bg-transparent border border-(--line) rounded-full w-10.5 h-10.5 text-white cursor-pointer"
+                        aria-label={open ? "Close menu" : "Open menu"}
+                        aria-expanded={open}
+                        onClick={() => setOpen(!open)}
+                    >
+                        <span
+                            className={`w-4 h-px bg-white transition-all duration-300 ease-in-out ${
+                                open ? "translate-y-0.75 rotate-45" : ""
+                            }`}
+                        />
+                        <span
+                            className={`w-4 h-px bg-white transition-all duration-300 ease-in-out ${
+                                open ? "-translate-y-0.75 -rotate-45" : ""
+                            }`}
+                        />
+                    </button>
+                </nav>
+            </header>
+
+            {/* Mobile Menu */}
+            <div
+                className={`fixed top-18.5 left-[5%] right-[5%] z-99 hidden max-[640px]:flex flex-col gap-0 px-4 border border-(--line) rounded-[15px] bg-[#090d0a]/97 backdrop-blur-[20px] overflow-hidden transition-all duration-300 ease-in-out ${
+                    open
+                        ? "max-h-100 opacity-100 pt-2.5 pb-4 translate-y-0"
+                        : "max-h-0 opacity-0 pt-0 pb-0 -translate-y-2 pointer-events-none border-transparent"
+                }`}
+            >
+                {links.map(([label, href], index) => (
+                    <a
+                        key={href}
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className={`flex justify-between py-3.5 px-1.25 border-b border-(--line) text-[13px] text-[#dce5df] no-underline transition-all duration-300 ease-out ${
+                            open
+                                ? "translate-y-0 opacity-100"
+                                : "translate-y-3 opacity-0"
+                        }`}
+                        style={{
+                            transitionDelay: open ? `${index * 70}ms` : "0ms",
+                        }}
+                    >
+                        {label}
                         <span>
                             <ArrowUpRightIcon
                                 size={14}
@@ -118,8 +126,32 @@ export default function Navbar() {
                             />
                         </span>
                     </a>
-                </div>
-            )}
-        </header>
+                ))}
+
+                <a
+                    href="#contact"
+                    onClick={() => setOpen(false)}
+                    className={`flex justify-between py-3.5 px-1.25 border-0 text-[13px] text-(--green) no-underline transition-all duration-300 ease-out ${
+                        open
+                            ? "translate-y-0 opacity-100"
+                            : "translate-y-3 opacity-0"
+                    }`}
+                    style={{
+                        transitionDelay: open
+                            ? `${links.length * 70}ms`
+                            : "0ms",
+                    }}
+                >
+                    Start a project
+                    <span>
+                        <ArrowUpRightIcon
+                            size={14}
+                            duration={1}
+                            color="currentColor"
+                        />
+                    </span>
+                </a>
+            </div>
+        </>
     );
 }
