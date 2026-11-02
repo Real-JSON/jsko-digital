@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import Aurora from "../effects/Aurora";
+import { ArrowDownIcon, ArrowUpRightIcon } from "@animateicons/react/lucide";
+import { useIconHover } from "@animateicons/react";
 
 export default function Hero() {
+    const { ref: projectIconRef, triggerProps: projectTriggerProps } =
+        useIconHover();
+
+    const { ref: workIconRef, triggerProps: workTriggerProps } = useIconHover();
+
     const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
     useEffect(() => {
@@ -62,18 +69,34 @@ export default function Hero() {
 
                     <div className="flex items-center gap-6.75 mt-8.5 max-[640px]:items-start max-[640px]:flex-col max-[640px]:gap-5">
                         <a
-                            className="inline-flex items-center justify-center gap-6 py-3.75 px-5.25 rounded-[50px] text-[12px] font-bold bg-(--green) text-[#04120d] shadow-[0_0_35px_rgba(0,214,154,0.13)] no-underline transition-[transform,box-shadow,background] duration-250 hover:-translate-y-0.75 hover:shadow-[0_10px_35px_rgba(0,214,154,0.25)] hover:bg-[#48edbd]"
+                            {...projectTriggerProps}
                             href="#contact"
+                            className="inline-flex items-center justify-center gap-4 py-3.75 px-7.25 rounded-[50px] text-[12px] font-bold bg-(--green) text-[#04120d] shadow-[0_0_35px_rgba(0,214,154,0.13)] no-underline transition-[transform,box-shadow,background] duration-250 hover:shadow-[0_10px_35px_rgba(0,214,154,0.25)]"
                         >
                             Start a project{" "}
-                            <span className="text-[17px]">↗</span>
+                            <span>
+                                <ArrowUpRightIcon
+                                    ref={projectIconRef}
+                                    size={20}
+                                    duration={1}
+                                    color="#04120d"
+                                />
+                            </span>
                         </a>
                         <a
-                            className="text-[12px] text-[#c6d0ca] no-underline"
+                            {...workTriggerProps}
+                            className="text-[12px] text-[#c6d0ca] no-underline flex gap-3 items-center"
                             href="#work"
                         >
                             Explore selected work{" "}
-                            <span className="ml-2.5 text-(--green)">↓</span>
+                            <span>
+                                <ArrowDownIcon
+                                    ref={workIconRef}
+                                    size={18}
+                                    duration={1}
+                                    color="#ffffff"
+                                />
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -81,7 +104,7 @@ export default function Hero() {
                 <div className="relative max-w-130 w-full mx-auto animate-[rise_0.9s_0.15s_both] max-[900px]:max-w-117.5 max-[640px]:w-[92%]">
                     <div className="absolute inset-y-[10%] inset-x-0 bg-[linear-gradient(120deg,rgba(0,214,154,0.22),rgba(112,0,204,0.2))] blur-[75px] rounded-full" />
 
-                    <div className="relative p-2.5 border border-white/16 rounded-[20px] bg-[#0e1310]/86 shadow-[0_35px_100px_#0009] rotate-2 transition-transform duration-500 hover:rotate-0 hover:-translate-y-1.5">
+                    <div className="relative p-2.5 border border-white/16 rounded-[20px] bg-[#0e1310]/86 shadow-[0_35px_100px_#0009] rotate-0 min-[901px]:rotate-2 min-[901px]:transition-transform min-[901px]:duration-500 min-[901px]:hover:rotate-0 min-[901px]:hover:-translate-y-1.5">
                         <div className="h-9.5 flex items-center justify-between px-2.5 text-[#65736b] text-[9px]">
                             <div className="flex gap-1.25">
                                 <i className="w-1.75 h-1.75 rounded-full bg-[#e87979]" />
@@ -138,7 +161,7 @@ export default function Hero() {
 
             <a
                 href="#focus"
-                className={`absolute bottom-[22dvh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#68736c] text-[10px] no-underline group transition-all duration-700 ${
+                className={`fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#68736c] text-[10px] no-underline group transition-all duration-700 ${
                     showScrollIndicator
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-3 pointer-events-none"
