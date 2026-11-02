@@ -1,6 +1,6 @@
 const socials = [
     ["Facebook", "https://www.facebook.com/jsko.digital/"],
-    ["Portfolio", "https://jsko-labs-portfolio.vercel.app/"],
+    ["Portfolio", "https://jsko-digital.vercel.app/"],
     ["Email", "mailto:jsko.digital@gmail.com"],
 ];
 
