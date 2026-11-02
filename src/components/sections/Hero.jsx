@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import Aurora from "../effects/Aurora";
-import { ArrowDownIcon, ArrowUpRightIcon } from "@animateicons/react/lucide";
+import {
+    ArrowDownIcon,
+    ArrowUpRightIcon,
+    MousePointerClickIcon,
+} from "@animateicons/react/lucide";
 import { useIconHover } from "@animateicons/react";
 
 export default function Hero() {
@@ -85,7 +89,7 @@ export default function Hero() {
                         </a>
                         <a
                             {...workTriggerProps}
-                            className="text-[12px] text-[#c6d0ca] no-underline flex gap-3 items-center"
+                            className=" inline-flex items-center justify-center gap-4 py-3.75 px-7.25 rounded-[50px] text-[12px] font-bold no-underline duration-250 border border-(--green)"
                             href="#work"
                         >
                             Explore selected work{" "}
@@ -134,11 +138,11 @@ export default function Hero() {
                             <div className="flex items-center justify-between text-[#a4b1a9] text-[10px] leading-loose">
                                 <span>Strategy</span>
                                 <span className="text-[23px] text-(--green)">
-                                    ✳
+                                    ⨳
                                 </span>
                                 <span>Design</span>
                                 <span className="text-[23px] text-(--green)">
-                                    ✳
+                                    ⨳
                                 </span>
                                 <span>Development</span>
                             </div>
@@ -146,7 +150,13 @@ export default function Hero() {
                     </div>
 
                     <div className="absolute -bottom-6 -left-7.5 flex items-center gap-3 py-3.5 px-4.5 border border-(--line) rounded-[13px] bg-[#111713] shadow-[0_15px_45px_#0008] max-[640px]:-left-3 max-[640px]:-bottom-7.5">
-                        <span className="text-[23px] text-(--green)">✳</span>
+                        <span>
+                            <MousePointerClickIcon
+                                size={23}
+                                duration={1}
+                                color="#00d69a"
+                            />
+                        </span>
                         <div>
                             <b className="block text-[11px]">
                                 From Imagination
