@@ -95,7 +95,13 @@ export default function Navbar() {
                             className="flex justify-between py-3.5 px-1.25 border-b border-(--line) text-[13px] text-[#dce5df] no-underline"
                         >
                             {label}
-                            <span>↗</span>
+                            <span>
+                                <ArrowUpRightIcon
+                                    size={14}
+                                    duration={1}
+                                    color="currentColor"
+                                />
+                            </span>
                         </a>
                     ))}
                     <a
@@ -103,7 +109,14 @@ export default function Navbar() {
                         onClick={() => setOpen(false)}
                         className="flex justify-between py-3.5 px-1.25 border-0 text-[13px] text-(--green) no-underline"
                     >
-                        Start a project <span>↗</span>
+                        Start a project{" "}
+                        <span>
+                            <ArrowUpRightIcon
+                                size={14}
+                                duration={1}
+                                color="currentColor"
+                            />
+                        </span>
                     </a>
                 </div>
             )}
