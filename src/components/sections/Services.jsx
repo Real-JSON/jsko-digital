@@ -36,7 +36,7 @@ const Services = () => {
     return (
         <section
             id="services"
-            className="max-w-310 mx-auto py-30 max-[640px]:py-21.25 max-[640px]:px-[6%]"
+            className="max-w-310 mx-auto py-30 max-[640px]:py-21.25 max-[954px]:px-[6%]"
         >
             {/* Section Header */}
             <div className="grid grid-cols-2 items-end gap-10 mb-13.75 max-[640px]:grid-cols-1 max-[640px]:gap-5 max-[640px]:mb-10">

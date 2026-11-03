@@ -7,7 +7,7 @@ import Pricing from "./components/sections/Pricing";
 import Projects from "./components/sections/Projects";
 import Faq from "./components/sections/Faq";
 import ContactCTA from "./components/sections/ContactCTA";
-import Services from "./components/sections/Servcies";
+import Services from "./components/sections/Services";
 
 export default function App() {
     return (
