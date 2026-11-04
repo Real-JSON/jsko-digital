@@ -25,7 +25,7 @@ const Faq = () => {
     return (
         <section
             id="faq"
-            className="max-w-310 mx-auto py-30 px-[5%] grid grid-cols-[0.8fr_1.2fr] gap-17.5 max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[640px]:py-21.25 max-[640px]:px-[6%] max-[640px]:gap-8"
+            className="max-w-310 mx-auto py-30 grid grid-cols-[0.8fr_1.2fr] gap-17.5 max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[640px]:py-21.25 max-[640px]:px-[6%] max-[640px]:gap-8"
         >
             {/* FAQ Heading */}
             <div className="max-w-100">
@@ -43,38 +43,60 @@ const Faq = () => {
 
             {/* FAQ Items */}
             <div className="border-t border-(--line)">
-                {faqs.map(([q, a], i) => (
-                    <details
-                        key={q}
-                        open={activeIndex === i}
-                        onToggle={(e) => {
-                            if (e.currentTarget.open) {
-                                setActiveIndex(i);
-                            } else {
-                                setActiveIndex((current) =>
-                                    current === i ? null : current,
-                                );
-                            }
-                        }}
-                        className="group border-b border-(--line)"
-                    >
-                        <summary className="flex items-center gap-4 py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden max-[640px]:gap-3 max-[640px]:py-5">
-                            <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-(--green) opacity-70 group-open:opacity-100 group-open:shadow-[0_0_10px_var(--green)] transition-all duration-200" />
+                {faqs.map(([q, a], i) => {
+                    const isOpen = activeIndex === i;
 
-                            <span className="text-[14px] leading-relaxed max-[640px]:text-[12px]">
-                                {q}
-                            </span>
+                    return (
+                        <div key={q} className="border-b border-(--line)">
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    setActiveIndex(isOpen ? null : i)
+                                }
+                                aria-expanded={isOpen}
+                                className="w-full flex items-center gap-4 py-6 text-left cursor-pointer max-[640px]:gap-3 max-[640px]:py-5"
+                            >
+                                <span
+                                    className={`w-1.5 h-1.5 shrink-0 rounded-full bg-(--green) transition-all duration-300 ${
+                                        isOpen
+                                            ? "opacity-100 shadow-[0_0_10px_var(--green)]"
+                                            : "opacity-70"
+                                    }`}
+                                />
 
-                            <span className="ml-auto shrink-0 text-(--green) text-[20px] transition-transform duration-200 group-open:rotate-45">
-                                +
-                            </span>
-                        </summary>
+                                <span className="text-[14px] leading-relaxed max-[640px]:text-[12px]">
+                                    {q}
+                                </span>
 
-                        <p className="max-w-142.5 pl-5.5 pb-6 text-(--muted) text-[12px] leading-[1.9] max-[640px]:text-[11px] max-[640px]:pb-5">
-                            {a}
-                        </p>
-                    </details>
-                ))}
+                                <span
+                                    className={`ml-auto shrink-0 text-(--green) text-[20px] transition-transform duration-300 ease-in-out ${
+                                        isOpen ? "rotate-45" : "rotate-0"
+                                    }`}
+                                >
+                                    +
+                                </span>
+                            </button>
+
+                            <div
+                                className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                                    isOpen
+                                        ? "grid-rows-[1fr]"
+                                        : "grid-rows-[0fr]"
+                                }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <p
+                                        className={`max-w-142.5 pl-5.5 pb-6 text-(--muted) text-[12px] leading-[1.9] transition-opacity duration-300 ease-in-out max-[640px]:text-[11px] max-[640px]:pb-5 ${
+                                            isOpen ? "opacity-100" : "opacity-0"
+                                        }`}
+                                    >
+                                        {a}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </section>
     );
