@@ -25,7 +25,7 @@ const Faq = () => {
     return (
         <section
             id="faq"
-            className="max-w-310 mx-auto py-30 grid grid-cols-[0.8fr_1.2fr] gap-17.5 max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[640px]:py-21.25 max-[640px]:px-[6%] max-[640px]:gap-8"
+            className="max-w-310 mx-auto py-30 grid grid-cols-[0.8fr_1.2fr] gap-17.5 max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[640px]:py-21.25 max-[1300px]:px-[6%] max-[640px]:gap-8"
         >
             {/* FAQ Heading */}
             <div className="max-w-100">
