@@ -18,7 +18,7 @@ export default function Footer() {
                         alt="JSKO"
                     />
                 </a>
-                <p className="m-0 text-(--muted) text-[12px] leading-[1.8] max-[640px]:order-3 max-[640px]:w-full">
+                <p className="m-0 text-(--muted) text-[12px] leading-[1.8] min-[640px]:text-center max-[640px]:order-3 max-[640px]:w-full">
                     Thoughtful digital experiences
                     <br />
                     for businesses ready to move forward.
