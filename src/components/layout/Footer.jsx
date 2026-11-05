@@ -30,25 +30,32 @@ export default function Footer() {
                     Back to Top ↑
                 </a>
             </div>
-            <div className="max-w-310 mx-auto flex items-center justify-between gap-6.25 pt-8.75 mt-8.75 border-t border-(--line) text-[#657169] text-[12px] max-[640px]:items-start max-[640px]:flex-col max-[640px]:gap-3.75">
+            <div className="max-w-310 mx-auto grid grid-cols-3 items-center gap-6.25 pt-8.75 mt-8.75 border-t border-(--line) text-[#657169] text-[10px] max-[640px]:grid-cols-1 max-[640px]:gap-3.75">
                 <span>
                     © {new Date().getFullYear()} JSKO Digital. All rights
                     reserved.
                 </span>
-                <div className="flex gap-5.5 max-[640px]:flex-wrap max-[640px]:gap-4">
+
+                <div className="flex items-center justify-center gap-5.5 max-[640px]:justify-start max-[640px]:flex-wrap max-[640px]:gap-4">
                     {socials.map(([n, u]) => (
                         <a
                             key={n}
                             href={u}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-[12px] text-[#aab2ad] no-underline transition-colors duration-200 hover:text-(--green)"
+                            className="text-[10px] text-[#aab2ad] no-underline transition-colors duration-200 hover:text-(--green)"
                         >
                             {n} ↗
                         </a>
                     ))}
                 </div>
-                <span>Made with <span className="text-(--green)">♥</span></span>
+
+                <span className="text-right max-[640px]:text-left">
+                    Made with{" "}
+                    <span className="inline-block text-(--green) animate-heartbeat ml-1">
+                        ♥
+                    </span>
+                </span>
             </div>
         </footer>
     );
