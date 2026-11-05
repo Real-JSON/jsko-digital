@@ -30,7 +30,7 @@ export default function Footer() {
                     Back to Top ↑
                 </a>
             </div>
-            <div className="max-w-310 mx-auto grid grid-cols-3 items-center gap-6.25 pt-8.75 mt-8.75 border-t border-(--line) text-[#657169] text-[10px] max-[640px]:grid-cols-1 max-[640px]:gap-3.75">
+            <div className="max-w-310 mx-auto grid grid-cols-3 items-center gap-6.25 pt-8.75 mt-8.75 border-t border-(--line) text-[#657169] text-[12px] md:text-[10px] max-[640px]:grid-cols-1 max-[640px]:gap-3.75">
                 <span>
                     © {new Date().getFullYear()} JSKO Digital. All rights
                     reserved.
@@ -43,7 +43,7 @@ export default function Footer() {
                             href={u}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-[10px] text-[#aab2ad] no-underline transition-colors duration-200 hover:text-(--green)"
+                            className="text-[12px] md:text-[10px] text-[#aab2ad] no-underline transition-colors duration-200 hover:text-(--green)"
                         >
                             {n} ↗
                         </a>
