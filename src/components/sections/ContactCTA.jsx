@@ -11,7 +11,7 @@ const ContactCTA = () => {
         >
             <div className="absolute -z-10 w-100 h-75 -top-45 left-[calc(50%-200px)] rounded-full bg-[#00d69a22] blur-[80px]" />
 
-            <span className="inline-flex items-center gap-2.5 text-(--green) text-[10px] font-bold tracking-[0.2em] uppercase">
+            <span className="inline-flex items-center gap-2.5 text-(--green) text-[10px] font-semibold tracking-[0.2em] uppercase">
                 HAVE A PROJECT IN MIND?
             </span>
 
@@ -29,7 +29,7 @@ const ContactCTA = () => {
             </p>
 
             <a
-                className="mt-7 inline-flex items-center justify-center gap-6 py-3.75 px-5.25 rounded-[50px] text-[12px] font-bold bg-(--green) text-[#04120d] shadow-[0_0_35px_rgba(0,214,154,0.13)] no-underline transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_10px_35px_rgba(0,214,154,0.25)] hover:cursor-pointer"
+                className="mt-7 inline-flex items-end justify-center gap-4 py-3.75 px-5.25 rounded-[50px] text-[12px] font-bold bg-(--green) text-[#04120d] shadow-[0_0_35px_rgba(0,214,154,0.13)] no-underline transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_10px_35px_rgba(0,214,154,0.25)] hover:cursor-pointer"
                 onMouseEnter={triggerProps.onMouseEnter}
                 onMouseLeave={triggerProps.onMouseLeave}
             >
@@ -46,7 +46,7 @@ const ContactCTA = () => {
                 Prefer email?{" "}
                 <span>
                     <a
-                        href="mailto:hello@jsko.digital"
+                        href="mailto:jsko.digital@gmail.com"
                         className="relative text-[#a8edcf] no-underline
     after:absolute after:left-0 after:-bottom-0.75
     after:h-px after:w-full after:origin-left
@@ -54,7 +54,7 @@ const ContactCTA = () => {
     after:transition-transform after:duration-300
     after:ease-out hover:after:scale-x-100"
                     >
-                        hello@jsko.digital
+                        jsko.digital@gmail.com
                     </a>
                 </span>
             </small>
